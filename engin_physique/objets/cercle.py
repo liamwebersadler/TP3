@@ -9,8 +9,8 @@ def cercle_init(x, y, rayon):
     Fonction pour initialiser un cercle à partir d'une liste de paramètres.
 
     Arguments:
-        x (float): Coordonnée en x du centre du cercle.
-        y (float): Coordonnée en y du centre du cercle.
+        x (float) : Coordonnée en x du centre du cercle.
+        y (float) : Coordonnée en y du centre du cercle.
         rayon (float): Rayon du cercle.
 
     Retourne:
@@ -76,3 +76,32 @@ def cercle_afficher(cercle):
     print('Cercle\n',
           f'(xc, yc) : ({cercle_obtenir_x(cercle)},{cercle_obtenir_y(cercle)})\n',
           f'rayon    : {cercle_obtenir_rayon(cercle)}\n')
+
+
+def cercle_contact_avec_cercle(cercle1, cercle2):
+    # TODO ajouter en-tete
+
+    # Extraire les coordonnées des centres des cercles
+
+    x1 = cercle_obtenir_x(cercle1)
+    y1 = cercle_obtenir_y(cercle1)
+    x2 = cercle_obtenir_x(cercle1)
+    y2 = cercle_obtenir_y(cercle1)
+
+    # Extraire les rayons
+    rayon_1 = cercle_obtenir_rayon(cercle1)
+    rayon_2 = cercle_obtenir_rayon(cercle2)
+
+    # Calculer la distance entre les centres des cercles
+    distance = pow((x2-x1)**2+(y2-y1)**2, 0.5)
+
+    return distance <= rayon_1 + rayon_2
+
+
+# TODO faire les deux testes uniformes(p.6)
+def test_cercle_en_contact_avec_cercle1():
+    pass
+
+
+def test_cercle_en_contact_avec_cercle2():
+    pass
