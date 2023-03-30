@@ -82,7 +82,6 @@ def cercle_contact_avec_cercle(cercle1, cercle2):
     # TODO ajouter en-tete
 
     # Extraire les coordonnées des centres des cercles
-
     x1 = cercle_obtenir_x(cercle1)
     y1 = cercle_obtenir_y(cercle1)
     x2 = cercle_obtenir_x(cercle1)
