@@ -1,6 +1,5 @@
 
-# Fonctions pour manipuler les rectangles
-
+# Fonctions importées
 from configuration.constantes import FORME_CERCLE
 
 
@@ -78,21 +77,29 @@ def cercle_afficher(cercle):
           f'rayon    : {cercle_obtenir_rayon(cercle)}\n')
 
 
+# TODO devrait être placé dans engin physique ?
 def cercle_contact_avec_cercle(cercle1, cercle2):
-    # TODO ajouter en-tete
+    """
+    Cette fonction permet d'identifier si les cercles sont en contact ou non entre eux.
 
+    Arguments:
+        cercle1 (dict): cercle 1 à analyser.
+        cercle2 (dict) : cercle 2 à analyser.
+
+    Retourne:
+        [bool] : indicateur de contact.
+    """
     # Extraire les coordonnées des centres des cercles
-
     x1 = cercle_obtenir_x(cercle1)
     y1 = cercle_obtenir_y(cercle1)
     x2 = cercle_obtenir_x(cercle1)
     y2 = cercle_obtenir_y(cercle1)
 
-    # Extraire les rayons
+    # Extraire les rayons.
     rayon_1 = cercle_obtenir_rayon(cercle1)
     rayon_2 = cercle_obtenir_rayon(cercle2)
 
-    # Calculer la distance entre les centres des cercles
+    # Calculer la distance entre les centres des cercles.
     distance = pow((x2-x1)**2+(y2-y1)**2, 0.5)
 
     return distance <= rayon_1 + rayon_2

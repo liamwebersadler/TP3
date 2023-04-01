@@ -1,4 +1,5 @@
 
+# Fonctions importées
 from engin_physique.objets.cercle import cercle_init
 from engin_physique.objets.rectangle import rectangle_init
 
@@ -7,10 +8,10 @@ def environnement_init():
     Initialise l'engin physique.
 
     Arguments:
-        nom_fichier (str) : Le nom du fichier qui contient l'environnement à charger.
+        nom_fichier (str) : le nom du fichier qui contient l'environnement à charger.
 
     Retourne:
-        (dict): L'environnement initialisé.
+        (dict): l'environnement initialisé.
     """
 
     # instantie des objects

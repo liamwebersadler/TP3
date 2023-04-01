@@ -14,15 +14,15 @@ def programme_principal():
         Rien.
     """
 
-    # initialise le robot et charge l'enginPhysique
+    # Initialiser le robot et charge l'enginPhysique.
     environnement = environnement_init()
 
-    # sélectionne la routine
+    # Sélectionner la routine.
     routine = ROUTINES.get("TEMPS_REEL", None)
 
     robot = None
 
-    # lance la simulation
+    # Lancer la simulation.
     if routine is not None:
         routine(environnement, robot)
 

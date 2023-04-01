@@ -1,24 +1,22 @@
+
+# Fonctions importées
 from matplotlib import animation
 import matplotlib.pyplot as plt
-
 from configuration.constantes import ROBOT_RAYON
 
 
 class Vue():
 
     def init_animation(vue):
-
-
         """
-        Initialise l'engin graphique
+        Initialise l'engin graphique.
 
         Arguments:
-            vue (class): référence à la classe
+            vue (class): référence à la classe.
 
         Retourne:
-            (patch): référence robot vue (inutilisé, mais requis par le module animation)
+            (patch): référence robot vue (inutilisé, mais requis par le module animation).
         """
-
 
         if vue.robot is not None:
             vue.robot_vue.center = (vue.robot["position"]["x"], vue.robot["position"]["y"])
@@ -36,17 +34,17 @@ class Vue():
         """
         Anime les éléments de la simulation
 
-        Arguments:
+        Arguments :
             vue (class): référence à la classe
-            i (int): numéro de frame envoyé par Animation (inutilisé)
+            i (int) : numéro de frame envoyé par Animation (inutilisé).
 
         Retourne:
-            (patch): référence robot vue (inutilisé, mais requis par le module animation)
+            (patch): référence robot vue (inutilisé, mais requis par le module animation).
         """
 
         from engin_simulation.engin_simulation import mise_a_jour_simulation
 
-        # la simulation est silencieuse, cette gestion des exceptions nous assures de les
+        # La simulation est silencieuse. Cette gestion des exceptions assure de les
         # afficher dans la console.
         try:
             mise_a_jour_simulation(vue.environnement, vue.robot)
@@ -63,20 +61,20 @@ class Vue():
 def init_vue(robot, environnement):
     """
     Initialise la vue en y attachant les références aux éléments de la simulation
-    et initialise leur contre-partie visuelle
+    et initialise leur contre-parti visuel.
 
-    Args:
-        robot (Robot): référence au robot
-        environnement (Environnement): référence à l'environnement
+    Arguments:
+        robot (robot): référence au robot.
+        environnement (environnement) : référence à l'environnement.
 
-    Returns:
-        référence à la vue initialisé
+    Returns :
+        référence à la vue initialisée
     """
 
     vue = Vue()
 
-    # cette gestion permet aux étudiants de lancer la simulation avant que le robot
-    # ne soit effectivement crée
+    # Cette gestion permet aux étudiants de lancer la simulation avant que le robot
+    # ne soit effectivement créé.
     if robot is not None:
         vue.robot = robot
         vue.robot_vue = plt.Circle((robot["position"]["x"], robot["position"]["y"]),
@@ -87,7 +85,7 @@ def init_vue(robot, environnement):
 
     vue.environnement = environnement
 
-    # lance et configure la fenêtre
+    # Lancer et configurer la fenêtre.
     vue.fig = plt.figure()
     vue.fig.set_dpi(100)
     vue.fig.set_size_inches(7, 6.5)
@@ -96,7 +94,7 @@ def init_vue(robot, environnement):
 
     vue.objets_vue = []
 
-    # crée les obstacles de l'environnement
+    # Créer les obstacles de l'environnement.
     for objet in vue.environnement["objets"]:
         if objet["forme"] == "cercle":
             vue.objets_vue.append(plt.Circle((objet["x"], objet["y"]),
@@ -113,10 +111,10 @@ def lancer_animation(vue):
     """
     Lance la simulation et la fenêtre. Cet appel est bloquant
 
-    Args:
-        vue (Vue): référence à la vue
+    Arguments:
+        vue (Vue): référence à la vue.
 
-    Returns:
+    Returns :
 
     """
 
@@ -129,14 +127,14 @@ def lancer_animation(vue):
     plt.show()
 
 
-def visualiser(vue, afficher=True):
+def visualiser(vue, afficher = True):
     """
     Permet d'afficher la vue en dehors du cadre de l'animation
 
-    Args:
-        vue (Vue): référence à la vue
+    Arguments :
+        vue (vue): référence à la vue.
 
-    Returns:
+    Returns :
 
     """
     vue.init_animation()
