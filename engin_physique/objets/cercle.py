@@ -77,7 +77,7 @@ def cercle_afficher(cercle):
           f'rayon    : {cercle_obtenir_rayon(cercle)}\n')
 
 
-# TODO devrait être placé dans engin physique ?
+# TODO doit être placé dans engin physique
 def cercle_contact_avec_cercle(cercle1, cercle2):
     """
     Cette fonction permet d'identifier si les cercles sont en contact ou non entre eux.
