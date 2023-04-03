@@ -14,14 +14,15 @@ import matplotlib.pyplot as plt
 from engin_graphique.engin_graphique import init_vue
 from engin_graphique.engin_graphique import lancer_animation
 
+
 def mise_a_jour_simulation(environnement, robot):
     """
-    Sous-programme qui simule une itération:
+    Sous-programme qui simule une itération :
         * Déterminer s'il y a contact avec un objet de l'environnement
         * Mettre à jour le système de décision du robot
         * Si pas en contact, faire le déplacement
 
-    Arguments:
+    Arguments :
         environnement (dict): L'environnement du robot.
         robot (dict): Le robot.
 
@@ -44,4 +45,4 @@ def simul_temps_reel(environnement, robot=None):
     lancer_animation(vue)
 
 
-ROUTINES = {"TEMPS_REEL":simul_temps_reel}
+ROUTINES = {"TEMPS_REEL": simul_temps_reel}
