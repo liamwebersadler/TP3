@@ -60,7 +60,7 @@ def rectangle_obtenir_x2(rectangle):
         (float): la coordonnée x du coin supérieur droit du rectangle.
     """
 
-    return rectangle['x'] + rectangle['hauteur']
+    return rectangle['x'] + rectangle['largeur']
 
 
 def rectangle_obtenir_y2(rectangle):
@@ -74,4 +74,4 @@ def rectangle_obtenir_y2(rectangle):
         (float): la coordonnée y du coin supérieur droit du rectangle.
     """
 
-    return rectangle['y'] + rectangle['largeur']
+    return rectangle['y'] + rectangle['hauteur']

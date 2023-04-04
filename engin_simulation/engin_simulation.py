@@ -14,6 +14,10 @@ import matplotlib.pyplot as plt
 from engin_graphique.engin_graphique import init_vue
 from engin_graphique.engin_graphique import lancer_animation
 
+# Fonction de gestion du robot
+from engin_physique.robot.robot import robot_effectuer_deplacement
+from engin_physique.robot.robot import robot_mise_a_jour_direction
+
 
 def mise_a_jour_simulation(environnement, robot):
     """
@@ -27,8 +31,11 @@ def mise_a_jour_simulation(environnement, robot):
         robot (dict): Le robot.
 
     """
+    # Mettre le robot à jour (c'est-à-dire la direction)
+    robot_mise_a_jour_direction(robot)
 
-    print("mise à jour de la simulation")
+    # Déplacer le robot dans le sens de la nouvelle direction mise à jour
+    robot_effectuer_deplacement(robot)
 
 
 def simul_temps_reel(environnement, robot=None):

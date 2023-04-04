@@ -4,6 +4,7 @@ from configuration.constantes import STRATEGIE_ALEATOIRE
 
 from engin_physique.engin_physique import environnement_init
 from engin_simulation.engin_simulation import ROUTINES
+
 # Sous-programmes relatifs au robot
 from engin_physique.robot.robot import robot_init
 
