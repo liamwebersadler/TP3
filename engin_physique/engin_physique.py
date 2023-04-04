@@ -3,6 +3,7 @@
 from engin_physique.objets.cercle import cercle_init
 from engin_physique.objets.rectangle import rectangle_init
 
+
 def environnement_init():
     """
     Initialise l'engin physique.
@@ -22,7 +23,7 @@ def environnement_init():
 
     objets = []
     objets.append(cercle)
-    objets.append((rectangle))
+    objets.append(rectangle)
 
     return {'objets': objets}
 

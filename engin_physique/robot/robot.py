@@ -106,7 +106,7 @@ def robot_obtenir_direction(robot):
     Retourne:
 
     """
-    return robot['strategie']
+    return robot['direction']
 
 
 def robot_modifier_position(robot, nouvelle_position):

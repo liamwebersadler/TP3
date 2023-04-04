@@ -97,15 +97,15 @@ def cercle_contact_avec_cercle(cercle1, cercle2):
     # Extraire les coordonnées des centres des cercles
     x1 = cercle_obtenir_x(cercle1)
     y1 = cercle_obtenir_y(cercle1)
-    x2 = cercle_obtenir_x(cercle1)
-    y2 = cercle_obtenir_y(cercle1)
+    x2 = cercle_obtenir_x(cercle2)
+    y2 = cercle_obtenir_y(cercle2)
 
     # Extraire les rayons.
     rayon_1 = cercle_obtenir_rayon(cercle1)
     rayon_2 = cercle_obtenir_rayon(cercle2)
 
     # Calculer la distance entre les centres des cercles.
-    distance = pow((x2-x1)**2+(y2-y1)**2, 0.5)
+    distance = pow((x2 - x1)**2 + (y2 - y1)**2, 0.5)
 
     return distance <= rayon_1 + rayon_2
 
@@ -147,7 +147,7 @@ def cercle_en_contact_avec_rectangle(cercle, rectangle):
 
     # Calculer la distance entre le point le plus près du centre du cercle
 
-    return ((x-cercle_x) ** 2 + (y-cercle_y) ** 2) <= cercle_rayon ** 2
+    return ((x-cercle_x)**2 + (y-cercle_y)**2) <= cercle_rayon ** 2
 
 
 # TODO faire les deux testes uniformes pour test_cercle_en_contact_avec_rectangle
