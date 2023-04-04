@@ -33,8 +33,6 @@ def programme_principal():
     if routine is not None:
         routine(environnement, robot)
 
-    pass
-
 
 if __name__ == "__main__":
     programme_principal()
