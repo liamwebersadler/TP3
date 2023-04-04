@@ -28,11 +28,11 @@ def robot_init(strategie):
     """
     Fonction pour initialiser à partir du dictionnaire strategie.
 
-    Arguments:
-        strategie TODO je sais pas quoi mettre
+    Arguments :
+        strategie (dict) : Dictionnaire qui retourne les stratégies du robot.
 
-    Retourne:
-        (dict): Une strategie initialiser.
+    Retourne :
+        (dict): Une stratégie initialiser.
     """
 
     return {'vitesse': ROBOT_VITESSE_INITIALE,
