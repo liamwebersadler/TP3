@@ -2,8 +2,7 @@
 Ce fichier défini les modes d'opérations (routines). Par souci d'abstraction, toutes les routines
 présentent la même liste de paramètres, même si les paramètres ne sont pas nécessairement utilisés.
 
-Les routines qui simulent le système appelent mise_a_jour_simulation directement ou via l'animation
-
+Les routines qui simulent le système appellent mise_a_jour_simulation directement ou via l'animation
 """
 
 import os
@@ -14,7 +13,10 @@ import matplotlib.pyplot as plt
 from engin_graphique.engin_graphique import init_vue
 from engin_graphique.engin_graphique import lancer_animation
 
-# Fonction de gestion du robot
+# Gestion des collisions.
+from engin_physique.engin_physique import robot_en_contact
+
+# Fonctions de gestion du robot.
 from engin_physique.robot.robot import robot_effectuer_deplacement
 from engin_physique.robot.robot import robot_mise_a_jour_direction
 
@@ -31,11 +33,16 @@ def mise_a_jour_simulation(environnement, robot):
         robot (dict): Le robot.
 
     """
-    # Mettre le robot à jour (c'est-à-dire la direction)
-    robot_mise_a_jour_direction(robot)
 
-    # Déplacer le robot dans le sens de la nouvelle direction mise à jour
-    robot_effectuer_deplacement(robot)
+    # Déterminer s'il y a un contact avec l'un des obstacles de l'environnement.
+    en_contact = robot_en_contact(environnement, robot)
+
+    # Mettre le robot à jour (c'est-à-dire la direction).
+    robot_mise_a_jour_direction(robot, en_contact)
+
+    # Déplacer le robot.
+    if not en_contact:
+        robot_effectuer_deplacement(robot)
 
 
 def simul_temps_reel(environnement, robot=None):
@@ -44,8 +51,8 @@ def simul_temps_reel(environnement, robot=None):
 
     À la fin de la simulation, la carte de chaleur est présentée.
 
-    :param robot: référence au robot-aspirateur
-    :param environnement: référence à l'enginPhysique
+    :param robot: référence au robot-aspirateur.
+    :param environnement: référence à l'enginPhysique.
     """
 
     vue = init_vue(robot, environnement)

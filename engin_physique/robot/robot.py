@@ -1,26 +1,26 @@
-# Constantes qui définissent le robot
+# Constantes qui définissent le robot.
 from configuration.constantes import ROBOT_RAYON
 from configuration.constantes import ROBOT_X_INITIAL
 from configuration.constantes import ROBOT_Y_INITIAL
 from configuration.constantes import ROBOT_VITESSE_INITIALE
 from configuration.constantes import ROBOT_DIRECTION_INITIALE
 
-# Constantes générales
+# Constantes générales.
 from configuration.constantes import DEVIATION_MOUVEMENT_ALEATOIRE
 
-# Importer le constructeur de positions
+# Importer le constructeur de positions.
 from engin_physique.physique.Position import position_init
 
-# Manipulation des positions (stocker dans un dictionnaire)
+# Manipulation des positions (stocker dans un dictionnaire).
 from engin_physique.physique.Position import position_obtenir_x
 from engin_physique.physique.Position import position_obtenir_y
 
-# Fonction mathématique
+# Fonction mathématique.
 from math import sin
 from math import cos
 from math import pi
 
-# Générateur(s) de nombre aléatoire
+# Générateur(s) de nombre aléatoire.
 from numpy.random import normal
 
 
@@ -112,8 +112,7 @@ def robot_obtenir_direction(robot):
 def robot_modifier_position(robot, nouvelle_position):
     robot['position'] = nouvelle_position
 
-
-def robot_effectuer_deplacement(robot):
+def robot_obtenir_prochaine_position(robot):
 
     position = robot_obtenir_position(robot)
 
@@ -127,15 +126,23 @@ def robot_effectuer_deplacement(robot):
     # Extraire la vitesse en mètres par iteration.
     vitesse = robot_obtenir_vitesse(robot)
 
-    # Mettre à jour les coordonnées
+    # Mettre à jour les coordonnées.
     robot_x_nouveau = robot_x + cos(direction) * vitesse
     robot_y_nouveau = robot_y + sin(direction) * vitesse
 
-    # Créer la nouvelle position
+    # Créer la nouvelle position.
     position_nouvelle = position_init(robot_x_nouveau, robot_y_nouveau)
 
-    # Assigner la nouvelle position au robot
-    robot_modifier_position(robot, position_nouvelle)
+    return position_nouvelle
+
+
+def robot_effectuer_deplacement(robot):
+
+    # Calculer la prochaine position.
+    nouvelle_position = robot_obtenir_prochaine_position(robot)
+
+    # Assigner la nouvelle position au robot.
+    robot_modifier_position(robot, nouvelle_position)
 
 
 def robot_modifier_direction(robot, nouvelle_direction):
@@ -144,27 +151,31 @@ def robot_modifier_direction(robot, nouvelle_direction):
 
 def robot_rectifier_direction(robot):
 
-    # Extraire la direction initiale
+    # Extraire la direction initiale.
     direction = robot_obtenir_direction(robot)
 
-    # Rectifier la direction
-    if direction > 0:
-        direction %= (2 * pi)
+    # Rectifier la direction.
+    if direction >= 2 * pi:
+        direction -= (2 * pi)
 
-    else:
-        direction = - (abs(direction) % (2 * pi))
+    elif direction < 0:
+        direction += 2 * pi
 
-    # Stocker la nouvelle position
+    # Stocker la nouvelle position.
     robot_modifier_direction(robot, direction)
 
 
-def robot_mise_a_jour_direction(robot):
+def robot_mise_a_jour_direction(robot, en_contact):
 
-    # Calculer la nouvelle direction
+    # Calculer la nouvelle direction.
     direction_nouvelle = robot_obtenir_direction(robot) + normal(scale=DEVIATION_MOUVEMENT_ALEATOIRE)
 
-    # Stoker la nouvelle direction
+    # Faire demi-tour s'il y a un contact.
+    if en_contact:
+        direction_nouvelle += pi
+
+    # Stoker la nouvelle direction.
     robot_modifier_direction(robot, direction_nouvelle)
 
-    # rectifier la nouvelle direction du robot
+    # Rectifier la nouvelle direction du robot.
     robot_rectifier_direction(robot)
