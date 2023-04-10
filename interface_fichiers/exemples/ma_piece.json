@@ -1,0 +1,5 @@
+{'x': 17, 'y': 17, 'rayon': 1, 'forme': 'cercle'}
+{'x': 12, 'y': 12, 'largeur': 0.1, 'hauteur': 6, 'forme': 'rectangle'}
+{'x': 12, 'y': 18, 'largeur': 6, 'hauteur': 0.1, 'forme': 'rectangle'}
+{'x': 12, 'y': 12, 'largeur': 6, 'hauteur': 0.1, 'forme': 'rectangle'}
+{'x': 18, 'y': 12, 'largeur': 0.1, 'hauteur': 6, 'forme': 'rectangle'}

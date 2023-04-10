@@ -1,0 +1,14 @@
+{"forme": "rectangle", "x": 0, "y": 0, "largeur": 0.1, "hauteur": 30}
+{"forme": "rectangle", "x": 0, "y": 29.9, "largeur": 30, "hauteur": 0.1}
+{"forme": "rectangle", "x": 29.9, "y": 0, "largeur": 0.1, "hauteur": 30}
+{"forme": "rectangle", "x": 0, "y": 0, "largeur": 30, "hauteur": 0.1}
+{"forme": "rectangle", "x": 0, "y": 20, "largeur": 20, "hauteur": 0.1}
+{"forme": "rectangle", "x": 20, "y": 15, "largeur": 0.1, "hauteur": 5}
+{"forme": "rectangle", "x": 20, "y": 0, "largeur": 0.1, "hauteur": 5}
+{"forme": "rectangle", "x": 10, "y": 20, "largeur": 0.1, "hauteur": 2.5}
+{"forme": "rectangle", "x": 10, "y": 27.5, "largeur": 0.1, "hauteur": 2.5}
+{"forme": "cercle", "x": 5, "y": 5, "rayon": 0.5}
+{"forme": "cercle", "x": 7.5, "y": 5, "rayon": 0.5}
+{"forme": "cercle", "x": 5, "y": 7.5, "rayon": 0.5}
+{"forme": "cercle", "x": 7.5, "y": 7.5, "rayon": 0.5}
+{"forme": "rectangle", "x": 25, "y": 25, "largeur": 3, "hauteur": 3}
