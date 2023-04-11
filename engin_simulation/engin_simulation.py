@@ -5,13 +5,14 @@ présentent la même liste de paramètres, même si les paramètres ne sont pas 
 Les routines qui simulent le système appellent mise_a_jour_simulation directement ou via l'animation
 """
 
-import os
-
-import numpy as np
-import matplotlib.pyplot as plt
-
+# Gestion du mode de la vue.
 from engin_graphique.engin_graphique import init_vue
 from engin_graphique.engin_graphique import lancer_animation
+from engin_graphique.engin_graphique import visualiser
+
+# Gestion du mode de la routine.
+from configuration.constantes import OPTION_TEMPS_REEL
+from configuration.constantes import OPTION_VISUALISER
 
 # Gestion des collisions.
 from engin_physique.engin_physique import robot_en_contact
@@ -60,3 +61,17 @@ def simul_temps_reel(environnement, robot=None):
 
 
 ROUTINES = {"TEMPS_REEL": simul_temps_reel}
+
+
+def simulation_visualiser_environnement(environnement, robot):
+
+    # Créer la vue.
+    vue = init_vue(robot, environnement)
+
+    # Afficher l'environnement sans lancer la simulation.
+    visualiser(vue)
+
+
+ROUTINES = {OPTION_TEMPS_REEL: simul_temps_reel,
+            OPTION_VISUALISER: simulation_visualiser_environnement}
+

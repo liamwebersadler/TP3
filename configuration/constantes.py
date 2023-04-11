@@ -17,7 +17,7 @@ NOM_FICHIER_EXEMPLES = 'exemples'
 '''
 
 # État du menu
-MENU_ACTIF = True
+MENU_ACTIF = False
 
 # Stragégies de recherche
 STRATEGIE_ALEATOIRE = 'Aléatoire'
@@ -27,9 +27,12 @@ STRATEGIE_A_STAR = 'A*'
 MENU_STRATEGIES = {0: 'Aléatoire',
                    2: 'A*'}
 
-# Modes de fonctionnement de l'application pour le menu
-MENU_MODES_OPERATIONS = {0: 'VISUALISER_ENVIRONNEMENT',
-                         1: 'TEMPS_REEL'}
+# Modes de fonctionnement de l'application pour le menu.
+OPTION_VISUALISER = 'VISUALISER_ENVIRONNEMENT'
+OPTION_TEMPS_REEL = 'TEMPS REEL'
+
+MENU_MODES_OPERATIONS = {0: OPTION_VISUALISER,
+                         1: OPTION_TEMPS_REEL}
 
 '''
  Constantes d'environnement
