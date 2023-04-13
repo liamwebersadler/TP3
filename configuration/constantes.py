@@ -70,7 +70,7 @@ ROBOT_X_INITIAL = 15
 ROBOT_Y_INITIAL = 15
 
 # Dimension du robot circulaire [m]
-ROBOT_RAYON = 0.3  # TODO 0.3 ou 1
+ROBOT_RAYON = 0.3
 
 # Vitesse d'avance [m/s]
 ROBOT_VITESSE_INITIALE = 0.1

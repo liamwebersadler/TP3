@@ -19,7 +19,7 @@ def afficher_choisir_dictionnaire(dictionnaire, invite):
     # Mesurer le dictionnaire.
     option_quitter = len(dictionnaire)
 
-    # Afficher l<option de quitter.
+    # Afficher l'option de quitter.
     print(f'\t{option_quitter} - Quitter')
 
     # Saisir un choix valide.
@@ -46,7 +46,7 @@ def choisir_strategie_robot():
 # TODO : vérifier option 4 de plus pas bonne pour environnement
 def choisir_environnement():
     # Extraire les noms de fichiers de l'environnement.
-    liste_fichier = listdir(f".\\{NOM_FICHIER_INTERFACE_FICHIERS}\\{NOM_FICHIER_EXEMPLES}")
+    liste_fichier = listdir(f"..\\{NOM_FICHIER_INTERFACE_FICHIERS}\\{NOM_FICHIER_EXEMPLES}")
 
     # Construire un dictionnaire pour l'affichage du menu.
     dictionnaire_menu = {i: nom_fichier for i, nom_fichier in enumerate(liste_fichier)}
