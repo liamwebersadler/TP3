@@ -1,6 +1,6 @@
 from math import pi
 
-from engin_physique.physique.Position import position_init
+#from engin_physique.physique.Position import position_init
 
 '''
   Chemins / noms de fichiers
@@ -47,7 +47,7 @@ OBSTACLE_LARGEUR_DEFAUT = 100
 OBSTACLE_HAUTEUR_DEFAUT = 100
 
 # Obstacle par défaut
-PIECE = {'haut-gauche': position_init(OBSTACLE_X_DEFAUT, OBSTACLE_Y_DEFAUT),
+PIECE = {'haut-gauche': {'x': 0, 'y': 0}, #position_init(OBSTACLE_X_DEFAUT, OBSTACLE_Y_DEFAUT),
          'largeur': OBSTACLE_LARGEUR_DEFAUT,
          'hauteur': OBSTACLE_LARGEUR_DEFAUT}
 

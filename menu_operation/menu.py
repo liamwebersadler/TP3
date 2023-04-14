@@ -6,6 +6,8 @@ from configuration.constantes import MENU_STRATEGIES
 from configuration.constantes import MENU_MODES_OPERATIONS
 from configuration.constantes import NOM_FICHIER_EXEMPLES
 from configuration.constantes import NOM_FICHIER_INTERFACE_FICHIERS
+from engin_physique import engine_physique
+from engin_physique.engine_physique import environnement_init
 
 
 def afficher_choisir_dictionnaire(dictionnaire, invite):
@@ -32,7 +34,7 @@ def afficher_choisir_dictionnaire(dictionnaire, invite):
     if choix == option_quitter:
         exit()
 
-    return choix
+    return dictionnaire[choix]
 
 
 def choisir_mode_operation():
@@ -44,16 +46,17 @@ def choisir_strategie_robot():
 
 
 # TODO : vérifier option 4 de plus pas bonne pour environnement
-def choisir_environnement():
+def choisir_environnement(path):
     # Extraire les noms de fichiers de l'environnement.
-    liste_fichier = listdir(f"..\\{NOM_FICHIER_INTERFACE_FICHIERS}\\{NOM_FICHIER_EXEMPLES}")
+    liste_fichier = listdir(path)
 
     # Construire un dictionnaire pour l'affichage du menu.
     dictionnaire_menu = {i: nom_fichier for i, nom_fichier in enumerate(liste_fichier)}
 
     # Afficher le menu.
-    afficher_choisir_dictionnaire(dictionnaire_menu, 'Veuillez choisir l\'environnement')
+    choix_user = afficher_choisir_dictionnaire(dictionnaire_menu, 'Veuillez choisir l\'environnement')
 
+    return environnement_init(path + '/' + choix_user)
 
-if __name__ == '__main__':
-    choisir_environnement()
+#if __name__ == '__main__':
+#    choisir_environnement()

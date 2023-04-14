@@ -15,7 +15,7 @@ from configuration.constantes import OPTION_TEMPS_REEL
 from configuration.constantes import OPTION_VISUALISER
 
 # Gestion des collisions.
-from engin_physique.engin_physique import robot_en_contact
+from engin_physique.engine_physique import robot_en_contact
 
 # Fonctions de gestion du robot.
 from engin_physique.robot.robot import robot_effectuer_deplacement
