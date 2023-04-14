@@ -47,7 +47,7 @@ OBSTACLE_LARGEUR_DEFAUT = 100
 OBSTACLE_HAUTEUR_DEFAUT = 100
 
 # Obstacle par défaut
-PIECE = {'haut-gauche': {'x': 0, 'y': 0}, #position_init(OBSTACLE_X_DEFAUT, OBSTACLE_Y_DEFAUT),
+PIECE = {'haut-gauche': {'x': 0, 'y': 0}, #position_init(OBSTACLE_X_DEFAUT, OBSTACLE_Y_DEFAUT) TODO verifier avec prof créait un problem de import loop
          'largeur': OBSTACLE_LARGEUR_DEFAUT,
          'hauteur': OBSTACLE_LARGEUR_DEFAUT}
 

@@ -44,13 +44,15 @@ def environnement_init(nom_fichier):
     # Charger les objets du fichier json
     for obj in json_charger_environnement(nom_fichier):
 
-        # Identifier le nom de la for
-        nomForme = obj["forme"].lower()
+        # Identifier le type de la forme.
+        nom_de_la_Forme = obj["forme"].lower()
 
-        if nomForme == "rectangle".lower():
+        # Si le nom_de_la_forme est rectangle :
+        if nom_de_la_Forme == "rectangle".lower():
             objets.append(rectangle_init(obj['x'], obj['y'], obj['largeur'], obj['hauteur']))
 
-        if nomForme == "cercle".lower():
+        # Si le nom_de_la_Forme est cercle :
+        if nom_de_la_Forme == "cercle".lower():
             objets.append(cercle_init(obj['x'], obj['y'], obj['rayon']))
 
     return {'objets': objets}

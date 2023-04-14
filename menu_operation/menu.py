@@ -34,7 +34,7 @@ def afficher_choisir_dictionnaire(dictionnaire, invite):
     if choix == option_quitter:
         exit()
 
-    return dictionnaire[choix]
+    return dictionnaire[choix]  # TODO on retourne la position du choix et non juste la valeur dans le menu
 
 
 def choisir_mode_operation():

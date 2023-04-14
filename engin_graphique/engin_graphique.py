@@ -109,7 +109,7 @@ def init_vue(robot, environnement):
 
 def lancer_animation(vue):
     """
-    Lance la simulation et la fenêtre. Cet appel est bloquant
+    Lance la simulation et la fenêtre. Cet appel est bloquant.
 
     Arguments:
         vue (Vue): référence à la vue.

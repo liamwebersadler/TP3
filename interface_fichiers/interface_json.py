@@ -52,17 +52,21 @@ def creation_fichier():
                               f'{forme}')
 """
 
+
 def json_charger_environnement(fichier):
 
     with open(fichier, 'r') as environnement:
         texte = environnement.readlines()
-    list = []
-    # Parcourir les lignes du fichier
+
+    # Initialiser une liste.
+    liste_obstacles = []
+
+    # Parcourir les lignes du fichier.
     for ligne in texte:
 
+        # Extraire les valeurs et les mettre dans la liste_obstacles.
         x = json.loads(ligne)
-        list.append(x)
+        liste_obstacles.append(x)
 
-    return list
-
-#json_charger_environnement('./exemples/piece_avec_obstacles.json')
+    # Retourner la liste.
+    return liste_obstacles

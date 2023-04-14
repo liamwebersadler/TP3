@@ -1,5 +1,5 @@
 # Importer les constantes du projet.
-from configuration.constantes import STRATEGIE_ALEATOIRE, STRATEGIE_A_STAR
+from configuration.constantes import STRATEGIE_ALEATOIRE
 from configuration.constantes import MENU_ACTIF
 from configuration.constantes import OPTION_VISUALISER
 from engin_graphique.engin_graphique import init_vue, visualiser, lancer_animation
@@ -50,10 +50,8 @@ def programme_principal():
         routine(environnement, robot)
 
     vue = init_vue(robot, environnement)
-
     visualiser(vue)
     lancer_animation(vue)
-
 
 from math import pi
 if __name__ == "__main__":
