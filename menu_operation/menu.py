@@ -38,11 +38,11 @@ def afficher_choisir_dictionnaire(dictionnaire, invite):
 
 
 def choisir_mode_operation():
-    afficher_choisir_dictionnaire(MENU_MODES_OPERATIONS, 'Veuillez choisir le mode d\'opération: ')
+    return afficher_choisir_dictionnaire(MENU_MODES_OPERATIONS, 'Veuillez choisir le mode d\'opération: ')
 
 
 def choisir_strategie_robot():
-    afficher_choisir_dictionnaire(MENU_STRATEGIES, 'Veuillez choisir la stratégie du robot: ')
+    return afficher_choisir_dictionnaire(MENU_STRATEGIES, 'Veuillez choisir la stratégie du robot: ')
 
 
 # TODO : vérifier option 4 de plus pas bonne pour environnement

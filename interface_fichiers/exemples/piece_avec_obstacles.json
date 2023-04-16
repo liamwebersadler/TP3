@@ -1,12 +1,12 @@
-{"forme": "rectangle", "x": 0, "y": 0, "largeur": 0.1, "hauteur": 30}
-{"forme": "rectangle", "x": 0, "y": 29.9, "largeur": 30, "hauteur": 0.1}
-{"forme": "rectangle", "x": 29.9, "y": 0, "largeur": 0.1, "hauteur": 30}
-{"forme": "rectangle", "x": 0, "y": 0, "largeur": 30, "hauteur": 0.1}
-{"forme": "cercle", "x": 25, "y": 25, "rayon": 1.0}
-{"forme": "cercle", "x": 5, "y": 25, "rayon": 1.0}
-{"forme": "cercle", "x": 5, "y": 5, "rayon": 1.0}
-{"forme": "cercle", "x": 25, "y": 5, "rayon": 1.0}
-{"forme": "rectangle", "x": 9.25, "y": 9.25, "largeur": 1.5, "hauteur": 1.5}
-{"forme": "rectangle", "x": 19.25, "y": 19.25, "largeur": 1.5, "hauteur": 1.5}
-{"forme": "rectangle", "x": 9.25, "y": 19.25, "largeur": 1.5, "hauteur": 1.5}
-{"forme": "rectangle", "x": 19.25, "y": 9.25, "largeur": 1.5, "hauteur": 1.5}
+{'forme': 'rectangle', 'x': 0, 'y': 0, 'largeur': 0.1, 'hauteur': 30}
+{'forme': 'rectangle', 'x': 0, 'y': 29.9, 'largeur': 30, 'hauteur': 0.1}
+{'forme': 'rectangle', 'x': 29.9, 'y': 0, 'largeur': 0.1, 'hauteur': 30}
+{'forme': 'rectangle', 'x': 0, 'y': 0, 'largeur': 30, 'hauteur': 0.1}
+{'forme': 'cercle', 'x': 25, 'y': 25, 'rayon': 1.0}
+{'forme': 'cercle', 'x': 5, 'y': 25, 'rayon': 1.0}
+{'forme': 'cercle', 'x': 5, 'y': 5, 'rayon': 1.0}
+{'forme': 'cercle', 'x': 25, 'y': 5, 'rayon': 1.0}
+{'forme': 'rectangle', 'x': 9.25, 'y': 9.25, 'largeur': 1.5, 'hauteur': 1.5}
+{'forme': 'rectangle', 'x': 19.25, 'y': 19.25, 'largeur': 1.5, 'hauteur': 1.5}
+{'forme': 'rectangle', 'x': 9.25, 'y': 19.25, 'largeur': 1.5, 'hauteur': 1.5}
+{'forme': 'rectangle', 'x': 19.25, 'y': 9.25, 'largeur': 1.5, 'hauteur': 1.5}

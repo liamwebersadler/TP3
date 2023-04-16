@@ -53,6 +53,7 @@ def programme_principal():
     visualiser(vue)
     lancer_animation(vue)
 
+
 from math import pi
 if __name__ == "__main__":
     programme_principal()
