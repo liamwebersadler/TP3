@@ -1,4 +1,4 @@
-#from engin_physique.engine_physique import environnement_init
+# from engin_physique.engine_physique import environnement_init
 from configuration.constantes import FORME_CERCLE
 from configuration.constantes import FORME_RECTANGLE
 from configuration.constantes import NOM_FICHIER_INTERFACE_FICHIERS
@@ -14,12 +14,13 @@ from configuration.constantes import NOM_FICHIER_EXEMPLES
           Riens. TODO est ce que nous devons créé un fichier et ajouter l'environnement ou ajouter l'environnement dans un fichier deja créé
   """
 
-def creation_fichier():
 
+def creation_fichier():
     # TODO: Retourner une liste d'obstacles
 
     # Initialiser un environnement.
     environnement = {}
+
     environnement['objets'] = json_charger_environnement('../interface_fichiers/exemples/piece_complexe.json')
     # TODO a ou w
     with open(f"..\{NOM_FICHIER_INTERFACE_FICHIERS}\{NOM_FICHIER_EXEMPLES}\obstacles.json", 'w') as fichier:
@@ -59,7 +60,6 @@ def creation_fichier():
 
 
 def json_charger_environnement(fichier):
-
     with open(fichier, 'r') as environnement:
         texte = environnement.readlines()
 
@@ -91,6 +91,6 @@ def json_charger_environnement(fichier):
     # Retourner la liste d'obstacles.
     return liste_obstacles
 
-#json_charger_environnement('./interface_fichiers/exemples/piece_complexe.json')
+# json_charger_environnement('./interface_fichiers/exemples/piece_complexe.json')
 
-#creation_fichier()
+# creation_fichier()
