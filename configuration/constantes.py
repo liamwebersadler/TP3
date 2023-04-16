@@ -17,7 +17,7 @@ NOM_FICHIER_EXEMPLES = 'exemples'
 '''
 
 # État du menu
-MENU_ACTIF = False
+MENU_ACTIF = True
 
 # Stragégies de recherche
 STRATEGIE_ALEATOIRE = 'Aléatoire'

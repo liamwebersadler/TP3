@@ -82,6 +82,7 @@ def json_charger_environnement(fichier):
         dict = {}
         for sous_element in ligne:
             sous_sous_element = sous_element.replace('\'', '').replace(' ', '').split(':')
+            # forme ou float
             if sous_sous_element[0] == 'forme':
                 dict[sous_sous_element[0]] = sous_sous_element[1]
             else:
