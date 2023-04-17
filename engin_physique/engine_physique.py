@@ -19,13 +19,9 @@ from engin_physique.objets.cercle import cercle_contact_avec_cercle
 from engin_physique.objets.cercle import cercle_init
 from engin_physique.objets.rectangle import rectangle_init
 
-#from interface_fichiers import interface_json
-
 # Gestion des fichiers.
 from interface_fichiers.interface_json import json_charger_environnement
 
-# Gestion de l'environnement
-#from menu_operation.menu import choisir_environnement
 
 def environnement_init(nom_fichier):
     """
@@ -67,13 +63,23 @@ def environnement_obtenir_objets(environnement):
         environnement (dict): l'environnement.
 
     Retourne:
-        (list): Liste d'objets de l'environnement.
+        (list): liste d'objets de l'environnement.
     """
 
     return environnement['objets']
 
 
 def robot_en_contact(environnement, robot):
+    """
+    Détermine les robots sont en contact.
+
+    Arguments :
+    environnement {dict}: l'environnement.
+    les robots
+
+    Retourne:
+        (bool) : retourne si les robots sont en contact ou non.
+    """
 
     # Indicateur de contact.
     est_contact = False
@@ -88,7 +94,7 @@ def robot_en_contact(environnement, robot):
     # Initialiser un cercle(i.e un collisionneur) à la prochaine position du robot.
     collisionneur = cercle_init(x_prochain, y_prochain, robot_obtenir_rayon(robot))
 
-    # Déterminer si contact avec quelconque obstacle
+    # Déterminer si contact avec quelconque obstacle.
     for obstacle in environnement_obtenir_objets(environnement):
 
         # Gérer les contacts pour les différentes formes d'obstacles.

@@ -4,13 +4,21 @@ from os import listdir
 # Les choix des différents menus.
 from configuration.constantes import MENU_STRATEGIES
 from configuration.constantes import MENU_MODES_OPERATIONS
-from configuration.constantes import NOM_FICHIER_EXEMPLES
-from configuration.constantes import NOM_FICHIER_INTERFACE_FICHIERS
-from engin_physique import engine_physique
 from engin_physique.engine_physique import environnement_init
 
 
 def afficher_choisir_dictionnaire(dictionnaire, invite):
+    """
+    Affiche la question, affiche toutes les possibilités et saisit la réponse de l'utilisateur.
+
+    Arguments :
+        invite [string] : chaîne de caractères qui contient la partie variable de lq question.
+        dictionnaire [dict] : choix possibles pour l'utilisateur.
+
+    Retourne :
+        clé du dictionnaire [dict] : clé du dictionnaire.
+    """
+
     # Afficher invite.
     print(invite)
 
@@ -34,19 +42,47 @@ def afficher_choisir_dictionnaire(dictionnaire, invite):
     if choix == option_quitter:
         exit()
 
-    return dictionnaire[choix]  # TODO on retourne la position du choix et non juste la valeur dans le menu
+    return dictionnaire[choix]
 
 
 def choisir_mode_operation():
+    """
+    Permet de choisir l'environnement évalué.
+
+    Arguments:
+        Aucun.
+
+    Retourne:
+        affichage du type de dictionnaire.
+    """
+
     return afficher_choisir_dictionnaire(MENU_MODES_OPERATIONS, 'Veuillez choisir le mode d\'opération: ')
 
 
 def choisir_strategie_robot():
+    """
+    Permet de choisir la stratégie évaluée.
+
+    Arguments:
+        Aucun.
+
+    Retourne:
+        affichage du type de stratégie.
+    """
     return afficher_choisir_dictionnaire(MENU_STRATEGIES, 'Veuillez choisir la stratégie du robot: ')
 
 
-# TODO : vérifier option 4 de plus pas bonne pour environnement
 def choisir_environnement(path):
+    """
+    Permet de choisir l'environnement évalué.
+
+    Arguments:
+        path[fichier] : fichier.
+
+    Retourne:
+        environnement : environnement choisit.
+    """
+
     # Extraire les noms de fichiers de l'environnement.
     liste_fichier = listdir(path)
 
@@ -57,6 +93,3 @@ def choisir_environnement(path):
     choix_user = afficher_choisir_dictionnaire(dictionnaire_menu, 'Veuillez choisir l\'environnement')
 
     return environnement_init(path + '/' + choix_user)
-
-#if __name__ == '__main__':
-#    choisir_environnement()

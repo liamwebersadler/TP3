@@ -30,8 +30,8 @@ def mise_a_jour_simulation(environnement, robot):
         * Si pas en contact, faire le déplacement
 
     Arguments :
-        environnement (dict): L'environnement du robot.
-        robot (dict): Le robot.
+        environnement (dict): l'environnement du robot.
+        robot (dict): le robot.
 
     """
 
@@ -49,16 +49,14 @@ def mise_a_jour_simulation(environnement, robot):
 def simul_temps_reel(environnement, robot=None):
     """
     Routine qui simule en temps réel et présente la simulation à l'écran.
-
     À la fin de la simulation, la carte de chaleur est présentée.
 
-    :param robot: référence au robot-aspirateur.
-    :param environnement: référence à l'enginPhysique.
+    param robot : référence au robot-aspirateur.
+    param environnement : référence à l'engin physique.
     """
 
     vue = init_vue(robot, environnement)
     lancer_animation(vue)
-
 
 ROUTINES = {"TEMPS_REEL": simul_temps_reel}
 

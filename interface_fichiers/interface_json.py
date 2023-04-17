@@ -4,25 +4,23 @@ from configuration.constantes import FORME_RECTANGLE
 from configuration.constantes import NOM_FICHIER_INTERFACE_FICHIERS
 from configuration.constantes import NOM_FICHIER_EXEMPLES
 
-"""
-      Génération d'un fichier d'environnement.
-
-      Arguments:
-          Aucun.
-
-      Retourne:
-          Riens. TODO est ce que nous devons créé un fichier et ajouter l'environnement ou ajouter l'environnement dans un fichier deja créé
-  """
-
 
 def creation_fichier():
-    # TODO: Retourner une liste d'obstacles
+    """
+    Génération d'un fichier d'environnement.
+
+    Arguments:
+        Aucun.
+
+    Retourne:
+        Rien.
+    """
 
     # Initialiser un environnement.
     environnement = {}
 
     environnement['objets'] = json_charger_environnement('../interface_fichiers/exemples/piece_complexe.json')
-    # TODO a ou w
+    # Ouvrir le fichier.
     with open(f"..\{NOM_FICHIER_INTERFACE_FICHIERS}\{NOM_FICHIER_EXEMPLES}\obstacles.json", 'w') as fichier:
 
         # Parcourir les lignes du dictionnaire de chaque objet.
@@ -60,6 +58,15 @@ def creation_fichier():
 
 
 def json_charger_environnement(fichier):
+    """
+    Permet d'intégrer la fonctionnalité du chargement de fichier à votre programme.
+
+    Arguments :
+        fichier (class): référence à la classe.
+
+    Retourne :
+        liste_obstacles [list] : référence robot vue (inutilisé, mais requis par le module animation).
+    """
     with open(fichier, 'r') as environnement:
         texte = environnement.readlines()
 
@@ -68,7 +75,7 @@ def json_charger_environnement(fichier):
 
     for ligne in texte:
 
-        # Caractère enlever.
+        # Caractère à enlever.
         a_enlever = '{}\n'
 
         # Parcourir la liste.
@@ -78,20 +85,17 @@ def json_charger_environnement(fichier):
         # Spliter la ligne.
         ligne = ligne.split(',')
 
-        #
+        # Modifier la liste afin d'obtenir les valeurs du fichier sélectionné.
         dict = {}
         for sous_element in ligne:
             sous_sous_element = sous_element.replace('\'', '').replace(' ', '').split(':')
-            # forme ou float
+            # Si le paramètre est une string :
             if sous_sous_element[0] == 'forme':
                 dict[sous_sous_element[0]] = sous_sous_element[1]
+            # Si le paramètre est un nombre :
             else:
                 dict[sous_sous_element[0]] = float(sous_sous_element[1])
         liste_obstacles.append(dict)
 
     # Retourner la liste d'obstacles.
     return liste_obstacles
-
-# json_charger_environnement('./interface_fichiers/exemples/piece_complexe.json')
-
-# creation_fichier()

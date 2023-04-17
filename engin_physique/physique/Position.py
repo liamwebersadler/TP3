@@ -33,10 +33,10 @@ def position_obtenir_x(une_position):
     """
     Accède à la coordonnée en x d'une position.
 
-    Arguments:
+    Arguments :
         une_position (dict): La position à consulter.
 
-    Retourne:
+    Retourne :
         Rien.
     """
 
@@ -47,7 +47,7 @@ def position_obtenir_y(une_position):
     """
     Accède à la coordonnée en y d'une position.
 
-    Arguments:
+    Arguments :
         une_position (dict): La position à consulter.
 
     Retourne:
@@ -61,7 +61,7 @@ def position_modifier_x(une_position, nouveau_x):
     """
     Modifie la coordonnée en x d'une position.
 
-    Arguments:
+    Arguments :
         une_position (dict): La position à modifier.
         nouveau_x (float): La nouvelle position.
 
@@ -76,7 +76,7 @@ def position_modifier_y(une_position, nouveau_y):
     """
     Modifie la coordonnée en y d'une position.
 
-    Arguments:
+    Arguments :
         une_position (dict): La position à modifier.
         nouveau_y (float): La nouvelle position.
 

@@ -1,5 +1,4 @@
-
-# Fonctions importées
+# Fonctions importées.
 from matplotlib import animation
 import matplotlib.pyplot as plt
 from configuration.constantes import ROBOT_RAYON
