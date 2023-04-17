@@ -50,7 +50,7 @@ def robot_obtenir_strategie(robot):
         robot (dict): Le robot
 
     Retourne:
-         : la stratégie du robot TODO je sais pas le type
+         : la stratégie du robot
     """
 
     return robot['strategie']
@@ -61,7 +61,7 @@ def robot_obtenir_rayon(robot):
     Accesseur pour le rayon du robot.
 
     Arguments:
-        robot (dict): le robot
+        robot (dict): Le robot
 
     Retourne:
         (float) : rayon du robot.
@@ -75,10 +75,10 @@ def robot_obtenir_position(robot):
     Accesseur pour la position initial du robot.
 
     Arguments:
-        robot (dict): le robot.
+        robot (dict): Le robot
 
     Retourne:
-        position du robot (tuple) : coordonnées x et y de la position initiale du robot T.
+        (tuple) : coordonnées x et y de la position initiale du robot
     """
     return robot['position']
 
@@ -104,35 +104,16 @@ def robot_obtenir_direction(robot):
         robot (dict): Le robot
 
     Retourne:
+
     """
     return robot['direction']
 
 
 def robot_modifier_position(robot, nouvelle_position):
-    """
-    Modifie la position du robot.
-
-    Arguments:
-        robot (dict): robot
-        nouvelle_position (dict): nouvelle position du robot
-
-    Retour :
-        Rien.
-    """
-
     robot['position'] = nouvelle_position
 
 
 def robot_obtenir_prochaine_position(robot):
-    """
-    Retourne la nouvelle position du robot
-
-    Argument:
-        robot {dict}: robot.
-
-    Retour :
-        {dict}: nouvelle position du robot.
-    """
 
     position = robot_obtenir_position(robot)
 
@@ -157,15 +138,6 @@ def robot_obtenir_prochaine_position(robot):
 
 
 def robot_effectuer_deplacement(robot):
-    """
-    Assigne la nouvelle position du robot.
-
-    Arguments :
-        robot (dict): robot.
-
-    Retour :
-        Rien.
-    """
 
     # Calculer la prochaine position.
     nouvelle_position = robot_obtenir_prochaine_position(robot)
@@ -175,30 +147,10 @@ def robot_effectuer_deplacement(robot):
 
 
 def robot_modifier_direction(robot, nouvelle_direction):
-    """
-    Modifie la direction du robot.
-
-    Arguments:
-        robot {dict}: robot.
-        nouvelle_direction (float): nouvelle direction du robot (en rad).
-
-    Retour :
-        Rien.
-    """
-
     robot['direction'] = nouvelle_direction
 
 
 def robot_rectifier_direction(robot):
-    """
-    Rectifie la direction du robot.
-
-    Arguments:
-        robot {dict}: robot
-
-    Retour :
-        Rien.
-    """
 
     # Extraire la direction initiale.
     direction = robot_obtenir_direction(robot)
@@ -215,16 +167,6 @@ def robot_rectifier_direction(robot):
 
 
 def robot_mise_a_jour_direction(robot, en_contact):
-    """
-    Met à jour le robot.
-
-    Arguments:
-        robot {dict} : robot.
-        en_contact (bool) : indicateur de contact du robot.
-
-    Retour :
-        Rien.
-    """
 
     # Calculer la nouvelle direction.
     direction_nouvelle = robot_obtenir_direction(robot) + normal(scale=DEVIATION_MOUVEMENT_ALEATOIRE)
@@ -238,5 +180,3 @@ def robot_mise_a_jour_direction(robot, en_contact):
 
     # Rectifier la nouvelle direction du robot.
     robot_rectifier_direction(robot)
-
-

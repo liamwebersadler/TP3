@@ -41,14 +41,14 @@ def environnement_init(nom_fichier):
     for obj in json_charger_environnement(nom_fichier):
 
         # Identifier le type de la forme.
-        nom_de_la_Forme = obj["forme"]
+        nom_de_la_forme = obj["forme"]
 
         # Si le nom_de_la_forme est rectangle :
-        if nom_de_la_Forme == "rectangle":
+        if nom_de_la_forme == "rectangle":
             objets.append(rectangle_init(obj['x'], obj['y'], obj['largeur'], obj['hauteur']))
 
         # Si le nom_de_la_Forme est cercle :
-        if nom_de_la_Forme == "cercle".lower():
+        if nom_de_la_forme == "cercle".lower():
             objets.append(cercle_init(obj['x'], obj['y'], obj['rayon']))
 
     # Retourner le dictionnaire.
